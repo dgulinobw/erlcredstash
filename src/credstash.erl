@@ -3,7 +3,11 @@
 %%% Erlang implementation of credstash (https://github.com/fugue/credstash)
 %%% @end
 -module(credstash).
+
+-behaviour(application).
 -include_lib("eunit/include/eunit.hrl").
+
+-export([start/2, stop/1]).
 
 -export([
         new/2, new/4, new/6, 
@@ -18,6 +22,13 @@
 -define(DEFAULT_DDB_TABLE, <<"credential-store">>).
 -define(DEFAULT_INITIAL_VERSION, "0000000000000000001").
 -define(KMS_KEY, <<"alias/credstash">>).
+
+start(_Type,_Args) ->
+  ok.
+
+stop(_State) ->
+    ok.
+
 
 %%%------------------------------------------------------------------------------
 %%% Library initilization
