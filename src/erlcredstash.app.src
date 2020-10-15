@@ -5,7 +5,7 @@
  [{description, "Erlang secrets library"},
   {vsn, git},
   {registered, [credstash]},
-  {applications, [ssl,erlcloud]},
+  {applications, [kernel,stdlib,ssl,erlcloud]},
   {modules, []},
   {env, []},
   {licenses, ["MIT"]},
